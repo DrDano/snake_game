@@ -8,8 +8,6 @@ screen.title('Snake Game')
 ted = Turtle()
 turtle_num = 0
 for turtle_name in range(3):
-
-
-
+    print(turtle_name)
 
 screen.exitonclick()
