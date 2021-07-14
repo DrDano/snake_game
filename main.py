@@ -1,6 +1,4 @@
-from turtle import Screen
-from snake import Snake
-from time import time
+from snake import Screen, Snake
 
 screen = Screen()
 screen.tracer(n=0)
@@ -9,6 +7,6 @@ screen.bgcolor('black')
 screen.title('Snake Game')
 
 snake = Snake()
+snake.move()
 
-screen = Screen()
 screen.exitonclick()
