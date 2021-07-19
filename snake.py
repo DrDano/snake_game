@@ -1,5 +1,9 @@
 from turtle import Turtle, Screen
 PACES = 20
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
 
@@ -8,7 +12,7 @@ class Snake:
         self.create_snake()
 
     def create_snake(self):
-        x_pos = -150
+        x_pos = -50
         for n in range(3):
             new_segment = Turtle()
             new_segment.n = Turtle(shape='square')
@@ -26,13 +30,17 @@ class Snake:
         self.segments[0].forward(PACES)
 
     def up(self):
-        self.segments[0].setheading(to_angle=90)
+        if self.segments[0].heading() != DOWN:
+            self.segments[0].setheading(to_angle=UP)
 
     def down(self):
-        self.segments[0].setheading(to_angle=270)
+        if self.segments[0].heading() != UP:
+            self.segments[0].setheading(to_angle=DOWN)
 
     def left(self):
-        self.segments[0].setheading(to_angle=180)
+        if self.segments[0].heading() != RIGHT:
+            self.segments[0].setheading(to_angle=LEFT)
 
     def right(self):
-        self.segments[0].setheading(to_angle=0)
+        if self.segments[0] != LEFT:
+            self.segments[0].setheading(to_angle=RIGHT)

@@ -2,8 +2,8 @@ from snake import Screen, Snake
 import time
 
 screen = Screen()
-screen.tracer(n=0)
 screen.setup(width=600, height=600)
+screen.tracer(n=0)
 screen.bgcolor('black')
 screen.title('Snake Game')
 
@@ -15,10 +15,10 @@ screen.onkey(key='Down', fun=snake.down)
 screen.onkey(key='Left', fun=snake.left)
 screen.onkey(key='Right', fun=snake.right)
 
-snake.move()
 
 game_is_on=True
 while game_is_on:
+    snake.move()
     screen.update()
     time.sleep(0.1)
 
