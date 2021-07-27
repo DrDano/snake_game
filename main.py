@@ -11,7 +11,7 @@ screen.title('Snake Game')
 
 snake = Snake()
 food = Food()
-score = Scoreboard()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(key='Up', fun=snake.up)
@@ -25,10 +25,11 @@ while game_is_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
-    score
+    print(scoreboard)
 
     #detect collision with food.
     if snake.segments[0].distance(food) < 15:
         food.refresh()
+        scoreboard.increase_score()
 
 screen.exitonclick()
